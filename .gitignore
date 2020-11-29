@@ -1,3 +1,6 @@
+# ignore sound files
+*.wav
+
 .DS_Store
 applet
 application.linux-arm64
