@@ -20,14 +20,13 @@ void setup() {
   minim = new Minim(this);
   input = minim.getLineIn();
 
-  playlist = new AudioPlayer[7];
-  playlist[0] = minim.loadFile("c2.wav");
-  playlist[1] = minim.loadFile("d2.wav");
-  playlist[2] = minim.loadFile("e2.wav");
-  playlist[3] = minim.loadFile("f2.wav");
-  playlist[4] = minim.loadFile("g2.wav");
-  playlist[5] = minim.loadFile("a2.wav");
-  playlist[6] = minim.loadFile("b2.wav");
+  playlist = new AudioPlayer[6];
+  playlist[0] = minim.loadFile("d3.wav");
+  playlist[1] = minim.loadFile("f3.wav");
+  playlist[2] = minim.loadFile("a3.wav");
+  playlist[3] = minim.loadFile("g3.wav");
+  playlist[4] = minim.loadFile("b3.wav");
+  playlist[5] = minim.loadFile("e3.wav");
 
   for (int i=0; i<agents.length; i++) {
     agents[i] = new Agent();
@@ -67,6 +66,7 @@ void drawBox() {
 }
 
 void collisionAction(int col) {
+  col = col - 1;
   playlist[col].rewind();
   playlist[col].play();
 }
